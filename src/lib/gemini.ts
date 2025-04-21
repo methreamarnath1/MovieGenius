@@ -17,7 +17,7 @@ export interface Movie {
 export async function getMovieRecommendations(preferences: string, apiKey: string): Promise<Movie[]> {
   try {
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
     
     const prompt = `Act as a movie recommendation expert. Based on these preferences: "${preferences}", 
     recommend 8 movies. For each movie, provide the following details in JSON format:
